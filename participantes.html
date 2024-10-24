@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participantes do Evento</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Participantes do Evento</h1>
+  </header>
+  <main>
+    <div class="participant-list">
+      <h2>Participantes</h2>
+      <ul id="participantList">
+        <li>João Silva - joao@email.com</li>
+        <li>Maria Souza - maria@email.com</li>
+      </ul>
+    </div>
+
+    <div class="add-participant">
+      <h2>Adicionar Participante</h2>
+      <form id="addParticipantForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <button type="submit">Adicionar Participante</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
