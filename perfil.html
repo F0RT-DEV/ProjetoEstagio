@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Perfil.css">
+    <title>Perfil - Fort Events</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil</h1>
+        <div class="profile">
+            <img src="Img/FortEvents.webp" alt="Perfil">
+            <h2 id="nome">Nome do Usuário</h2>
+            <p id="email">email@example.com</p>
+            <p id="local">Localização</p>
+            <h3>Meus Eventos</h3>
+            <ul id="meus-eventos">
+                <!-- Eventos aqui -->
+            </ul>
+        </div>
+        <div class="buttons-logout">
+            <button id="logout-btn">Sair</button>
+            <button onclick="window.location.href='index.html'">Voltar para Home</button>
+        </div>
+    </div>
+    <script>
+        // Preencha as informações do usuário aqui
+        const nome = 'Nome do Usuário';
+        const email = 'email@example.com';
+        const local = 'Localização';
+
+        document.getElementById('nome').innerText = nome;
+        document.getElementById('email').innerText = email;
+        document.getElementById('local').innerText = local;
+
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('isAuthenticated'); // Remove o estado de autenticação
+            window.location.href = 'eventos.html'; // Redireciona para a página inicial
+        });
+    </script>
+</body>
+</html>
