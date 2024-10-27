@@ -1,37 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Participantes do Evento</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="Img/FortEvents.webp" type="image/x-icon">
+    <title>Fort Events</title>
+    <link rel="stylesheet" href="Participantes.css">
 </head>
 <body>
-  <header>
-    <h1>Participantes do Evento</h1>
-  </header>
-  <main>
-    <div class="participant-list">
-      <h2>Participantes</h2>
-      <ul id="participantList">
-        <li>João Silva - joao@email.com</li>
-        <li>Maria Souza - maria@email.com</li>
+    <header>
+      <a href="eventos.html"><img class="logo" src="Img/FortEvents.webp" alt="Logo"></a>
+      <nav class="menu">
+        <ul>
+          <li><a href="eventos.html">Home</a></li>
+          <li><a href="#">Adicionar Evento</a></li>
+          <li><a href="#">Ajuda</a></li>
+          <li><a href="#">Entrar</a></li>
       </ul>
-    </div>
-
-    <div class="add-participant">
-      <h2>Adicionar Participante</h2>
-      <form id="addParticipantForm">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        
-        <button type="submit">Adicionar Participante</button>
-      </form>
-    </div>
-  </main>
+      </nav>
+    </header>
+    <main>
+      <section id="participantes-list">
+        <h2>Lista de Participantes</h2>
+        <ul id="participantes-ul">
+            <li>
+                <p>Nome: Daniel Ferreira</p>
+                <p>Email: Danirusso@example.com</p>
+            </li>
+            <li>
+                <p>Nome: Ana Livia</p>
+                <p>Email: Nali626@example.com</p>
+            </li>
+            <li>
+                <p>Nome: Guilherme Santos</p>
+                <p>Email: Gui.ssa@example.com</p>
+            </li>
+        </ul>
+    </section>
+        <section id="add-participante">
+            <h2>Adicionar Novo Participante</h2>
+            <form id="participante-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h1 id="contatoTitulo">Contatos</h1>
+        <div class="contatos">
+          <a href="https://www.instagram.com/dougras.fb/"  target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://github.com/F0RT-DEV"  target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/douglas-ferreira-borges-3649a425a/"  target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"  target="_blank"><i class="bi bi-envelope"></i></a>
+        </div>          
+        <p class="footer-p">Fort Events - Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
