@@ -93,6 +93,7 @@ main {
   height: 300px;
   border-radius: 5px;
 }
+
 #event-list {
   width: 80%;
   display: grid;
@@ -110,8 +111,27 @@ main {
   transition: transform 0.2s;
 }
 
+.event h2 {
+  font-size: 1.5em;
+  margin: 8px 0;
+  color: #333;
+}
+
+.event p {
+  color: #666;
+  font-size: 0.9em;
+  margin: 4px 0;
+}
+
 .event:hover {
   transform: scale(1.02);
+}
+
+.event-buttons {
+  display: flex;
+  justify-content:space-between;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 button {

@@ -34,3 +34,39 @@ document.addEventListener('DOMContentLoaded', () => {
         loginLink.parentNode.replaceChild(perfilLink, loginLink);
     }
 });
+
+// Carrega e exibe eventos salvos no localStorage
+function loadEvents() {
+    const eventList = document.getElementById('event-list');
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+
+    events.forEach((event, index) => {
+        const eventDiv = document.createElement('div');
+        eventDiv.classList.add('event');
+
+        eventDiv.innerHTML = `
+            <img class="imagens" src="${event.image}" alt="">
+            <h2>${event.title}</h2>
+            <p>Data: ${event.date}</p>
+            <p>Local: ${event.location}</p>
+            <p>Descrição: ${event.description}</p>
+            <div class="event-buttons">
+                <button onclick="location.href='participantes.html'">Ver Participantes</button>
+                <button class="remove-btn" onclick="removeEvent(${index})">Remover</button>
+            </div>
+        `;
+
+        eventList.appendChild(eventDiv);
+    });
+}
+
+// Função para remover o evento
+function removeEvent(index) {
+    let events = JSON.parse(localStorage.getItem('events')) || [];
+    events.splice(index, 1); // Remove o evento pelo índice
+    localStorage.setItem('events', JSON.stringify(events)); // Atualiza o localStorage
+    location.reload(); // Recarrega a página para atualizar a lista de eventos
+}
+
+// Executa ao carregar a página
+document.addEventListener('DOMContentLoaded', loadEvents);
