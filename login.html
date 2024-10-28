@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Img/FortEvents.webp" type="image/x-icon">
     <link rel="stylesheet" href="Login.css">
     <title>Login/Cadastro - Fort Events</title>
 </head>
@@ -16,7 +17,7 @@
         <form id="form" style="display: none;">
             <input type="text" id="name" placeholder="Nome" required style="display: none;">
             <input type="email" id="email" placeholder="Email" required>
-            <input type="datetime-local" id="local" placeholder="Localização" required>
+            <input type="local" id="local" placeholder="Localização" required>
             <input type="password" id="password" placeholder="Senha" required>
             <button type="submit">Enviar</button>
         </form>
@@ -35,7 +36,7 @@
             e.preventDefault();
             alert('Login realizado com sucesso!');
             localStorage.setItem('isAuthenticated', 'true'); // Armazena o estado de autenticação
-            window.location.href = 'eventos.html';
+            window.location.href = 'index.html';
         };
     });
 
@@ -46,7 +47,7 @@
             e.preventDefault();
             alert('Cadastro realizado com sucesso!');
             localStorage.setItem('isAuthenticated', 'true'); // Armazena o estado de autenticação
-            window.location.href = 'eventos.html';
+            window.location.href = 'index.html';
         };
     });
 </script>

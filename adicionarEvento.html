@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Img/FortEvents.webp" type="image/x-icon">
     <link rel="stylesheet" href="adicionarEvento.css">
     <title>Adicionar Evento - Fort Events</title>
 </head>
@@ -20,7 +21,7 @@
     </div>
 
     <div class="buttons-logout">
-        <button onclick="window.location.href='eventos.html'">Voltar para Home</button>
+        <button onclick="window.location.href='index.html'">Voltar para Home</button>
     </div>
 
     <script>
@@ -34,7 +35,7 @@
             const location = document.getElementById('location').value;
             const description = document.getElementById('description').value;
             const image = document.getElementById('image').value;
-            // Aqui você pode armazenar os dados do evento em localStorage ou enviar para um servidor
+            
             const newEvent = {
                 title,
                 date,
@@ -46,8 +47,8 @@
             // Armazenando o evento no localStorage (apenas para fins de demonstração)
             localStorage.setItem('newEvent', JSON.stringify(newEvent));
 
-            // Redirecionar para a página inicial
-            window.location.href = 'index.html'; // Substitua pelo seu arquivo de página inicial
+            
+            window.location.href = 'index.html'; 
 
             document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem('isAuthenticated'); // Remove o estado de autenticação
