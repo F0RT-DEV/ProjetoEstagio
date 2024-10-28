@@ -25,19 +25,36 @@
         </div>
     </div>
     <script>
-        // Preencha as informações do usuário aqui
-        const nome = 'Nome do Usuário';
-        const email = 'email@example.com';
-        const local = 'Localização';
+        // Simula dados de login salvos no localStorage (para exemplo)
+        // Estes dados normalmente seriam salvos no localStorage após o login/cadastro do usuário
+        if (!localStorage.getItem('userData')) {
+            const userData = {
+                nome: 'João da Silva',
+                email: 'joao@example.com',
+                local: 'São Paulo, Brasil'
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+        }
 
-        document.getElementById('nome').innerText = nome;
-        document.getElementById('email').innerText = email;
-        document.getElementById('local').innerText = local;
+        // Recupera os dados do usuário a partir do localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
 
+        // Preenche os dados do perfil
+        if (userData) {
+            document.getElementById('nome').innerText = userData.nome;
+            document.getElementById('email').innerText = userData.email;
+            document.getElementById('local').innerText = userData.local;
+        } else {
+            console.log("Nenhum dado de usuário encontrado.");
+        }
+
+        // Adiciona evento ao botão de logout
         document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem('isAuthenticated'); // Remove o estado de autenticação
+            localStorage.removeItem('userData'); // Remove os dados do usuário
             window.location.href = 'eventos.html'; // Redireciona para a página inicial
         });
     </script>
 </body>
+
 </html>
