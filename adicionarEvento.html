@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="adicionarEvento.css">
+    <title>Adicionar Evento - Fort Events</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Evento</h1>
+        <form id="event-form">
+            <input type="file" id="image" accept="image/*" required>
+            <input type="text" id="title" placeholder="Título do Evento" required>
+            <input type="date" id="date" required>
+            <input type="text" id="location" placeholder="Local" required>
+            <textarea id="description" placeholder="Descrição do Evento" required></textarea>
+            <button type="submit">Adicionar Evento</button>
+        </form>
+    </div>
+
+    <div class="buttons-logout">
+        <button onclick="window.location.href='eventos.html'">Voltar para Home</button>
+    </div>
+
+    <script>
+        const eventForm = document.getElementById('event-form');
+
+        eventForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('title').value;
+            const date = document.getElementById('date').value;
+            const location = document.getElementById('location').value;
+            const description = document.getElementById('description').value;
+
+            // Aqui você pode armazenar os dados do evento em localStorage ou enviar para um servidor
+            const newEvent = {
+                title,
+                date,
+                location,
+                description,
+                image: document.getElementById('image').files[0] // Você pode precisar de um método para armazenar a imagem
+            };
+
+            // Armazenando o evento no localStorage (apenas para fins de demonstração)
+            localStorage.setItem('newEvent', JSON.stringify(newEvent));
+
+            // Redirecionar para a página inicial
+            window.location.href = 'eventos.html'; // Substitua pelo seu arquivo de página inicial
+
+            document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('isAuthenticated'); // Remove o estado de autenticação
+            window.location.href = 'eventos.html'; // Redireciona para a página inicial
+            });
+        });
+    </script>
+</body>
+</html>

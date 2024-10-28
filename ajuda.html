@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Img/FortEvents.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="ajuda.css">
+    <title>Ajuda - Fort Events</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isAuthenticated = localStorage.getItem('isAuthenticated');
+            
+            if (isAuthenticated === 'true') {
+                const loginLink = document.getElementById('login-link');
+                const perfilLink = document.createElement('a');
+                perfilLink.href = 'perfil.html';
+                perfilLink.innerHTML = '<i class="bi bi-person"></i>';
+                perfilLink.id = 'perfil-link'; // Adicionando um ID para referência futura
+                loginLink.parentNode.replaceChild(perfilLink, loginLink);
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="eventos.html"><img class="logo" src="Img/FortEvents.webp" alt="Logo"></a>
+        <nav class="menu">
+            <ul>
+                <li><a href="eventos.html">Home</a></li>
+                <li><a href="adicionarEvento.html">Adicionar Evento</a></li>
+                <li><a href="#">Ajuda</a></li>
+                <li><a href="login.html" id="login-link">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Ajuda</h1>
+            <section class="faq">
+                <h2>Como adicionar um evento?</h2>
+                <p>Para adicionar um evento, clique no menu "Adicionar Evento" e preencha as informações solicitadas, como título, data, local e descrição. Após preencher, clique no botão "Adicionar Evento".</p>
+            </section>
+            <section class="faq">
+                <h2>Como visualizar eventos?</h2>
+                <p>Os eventos adicionados podem ser visualizados na página inicial. Clique em "Ver Participantes" para mais informações sobre cada evento.</p>
+            </section>
+            <section class="faq">
+                <h2>Dúvidas frequentes</h2>
+                <p>Se você tiver dúvidas adicionais, consulte nossa seção de perguntas frequentes ou entre em contato conosco.</p>
+            </section>
+            <section class="faq">
+                <h2>Contato</h2>
+                <p>Para mais informações, entre em contato pelo e-mail: <a href="mailto:contato@fortevents.com">contato@fortevents.com</a>.</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <h1 id="contatoTitulo">Contatos</h1>
+        <div class="contatos">
+            <a href="https://www.instagram.com/dougras.fb/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com/F0RT-DEV" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/douglas-ferreira-borges-3649a425a/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank"><i class="bi bi-envelope"></i></a>
+        </div>
+        <p>Fort Events - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

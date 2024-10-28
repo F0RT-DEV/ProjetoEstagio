@@ -7,6 +7,20 @@
     <link rel="icon" href="Img/FortEvents.webp" type="image/x-icon">
     <title>Fort Events</title>
     <link rel="stylesheet" href="Participantes.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isAuthenticated = localStorage.getItem('isAuthenticated');
+            
+            if (isAuthenticated === 'true') {
+                const loginLink = document.getElementById('login-link');
+                const perfilLink = document.createElement('a');
+                perfilLink.href = 'perfil.html';
+                perfilLink.innerHTML = '<i class="bi bi-person"></i>';
+                perfilLink.id = 'perfil-link'; // Adicionando um ID para referência futura
+                loginLink.parentNode.replaceChild(perfilLink, loginLink);
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -14,9 +28,9 @@
       <nav class="menu">
         <ul>
           <li><a href="eventos.html">Home</a></li>
-          <li><a href="#">Adicionar Evento</a></li>
-          <li><a href="#">Ajuda</a></li>
-          <li><a href="#">Entrar</a></li>
+          <li><a href="adicionarEvento.html">Adicionar Evento</a></li>
+          <li><a href="ajuda.html">Ajuda</a></li>
+          <li><a href="login.html" id="login-link">Entrar</a></li>
       </ul>
       </nav>
     </header>
