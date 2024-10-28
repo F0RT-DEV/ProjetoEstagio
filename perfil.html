@@ -21,7 +21,7 @@
         </div>
         <div class="buttons-logout">
             <button id="logout-btn">Sair</button>
-            <button onclick="window.location.href='eventos.html'">Voltar para Home</button>
+            <button onclick="window.location.href='index.html'">Voltar para Home</button>
         </div>
     </div>
     <script>
@@ -52,7 +52,7 @@
         document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem('isAuthenticated'); // Remove o estado de autenticação
             localStorage.removeItem('userData'); // Remove os dados do usuário
-            window.location.href = 'eventos.html'; // Redireciona para a página inicial
+            window.location.href = 'index.html'; // Redireciona para a página inicial
         });
     </script>
 </body>

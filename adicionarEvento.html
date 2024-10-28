@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Adicionar Evento</h1>
         <form id="event-form">
-            <input type="file" id="image" accept="image/*" required>
+            <input type="text" id="image" placeholder="Digite a url da imagem" required>
             <input type="text" id="title" placeholder="Título do Evento" required>
             <input type="date" id="date" required>
             <input type="text" id="location" placeholder="Local" required>
@@ -33,25 +33,25 @@
             const date = document.getElementById('date').value;
             const location = document.getElementById('location').value;
             const description = document.getElementById('description').value;
-
+            const image = document.getElementById('image').value;
             // Aqui você pode armazenar os dados do evento em localStorage ou enviar para um servidor
             const newEvent = {
                 title,
                 date,
                 location,
                 description,
-                image: document.getElementById('image').files[0] // Você pode precisar de um método para armazenar a imagem
+                image  // Você pode precisar de um método para armazenar a imagem
             };
 
             // Armazenando o evento no localStorage (apenas para fins de demonstração)
             localStorage.setItem('newEvent', JSON.stringify(newEvent));
 
             // Redirecionar para a página inicial
-            window.location.href = 'eventos.html'; // Substitua pelo seu arquivo de página inicial
+            window.location.href = 'index.html'; // Substitua pelo seu arquivo de página inicial
 
             document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem('isAuthenticated'); // Remove o estado de autenticação
-            window.location.href = 'eventos.html'; // Redireciona para a página inicial
+            window.location.href = 'index.html'; // Redireciona para a página inicial
             });
         });
     </script>
